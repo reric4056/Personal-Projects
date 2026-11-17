@@ -1,5 +1,6 @@
 from agent import Agent
 from mission import Mission
+from casino import Casino
 
 def main():
     print("OPERATION VALENTINE")
@@ -10,6 +11,10 @@ def main():
     codename = input("Enter agent's codename: ")
     clearance_level = input("Enter agent's clearance level: ")
     agent = Agent(name, codename, clearance_level)
+
+    # Create a casino
+    casino = Casino("Lucky Star Casino", "Las Vegas")
+
 
     # Create your first mission
     mission_1 = ""
@@ -50,8 +55,8 @@ def main():
         if choice == "1":
             agent.introduce()
         elif choice == "2":
-            amount = float(input("Enter the amount to bet: "))
-            agent.place_bet(amount)
+            casino.welcome()
+            casino.play(agent)
         elif choice == "3":
             agent.change_disguise()
         elif choice == "4":
